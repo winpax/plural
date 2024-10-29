@@ -1,14 +1,6 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+mod form;
+mod plural;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub use form::PluralForm;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub use plural::{Plural, Pluralize};

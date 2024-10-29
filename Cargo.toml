@@ -1,6 +1,10 @@
 [package]
+description = "Simple library to pluralize words"
 edition = "2021"
+include = ["src/**/*", "LICENSE", "README.md"]
+license = "Apache-2.0"
 name = "plural"
+repository = "https://github.com/winpax/plural"
 version = "0.1.0"
 
 [dependencies]

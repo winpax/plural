@@ -1,5 +1,5 @@
 [package]
-description = "Simple library to pluralize words"
+description = "Simple library to pluralize English words"
 edition = "2021"
 include = ["src/**/*", "LICENSE", "README.md"]
 license = "Apache-2.0"

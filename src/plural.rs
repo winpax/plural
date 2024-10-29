@@ -3,12 +3,15 @@ use std::fmt::Display;
 use super::PluralForm;
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
+#[must_use]
+/// Provides a wrapper that implements the [`Pluralize`] trait.
 pub struct Plural<'w> {
     pub(crate) word: &'w str,
     pub(crate) form: PluralForm,
 }
 
 impl<'w> Plural<'w> {
+    /// Construct a new [`Plural`] instance.
     pub const fn new(word: &'w str) -> Self {
         Self {
             word,
@@ -16,10 +19,12 @@ impl<'w> Plural<'w> {
         }
     }
 
+    /// Construct a new [`Plural`] instance with a custom form.
     pub const fn new_with_form(word: &'w str, form: PluralForm) -> Self {
         Self { word, form }
     }
 
+    /// Assign a plural form to the [`Plural`] instance.
     pub fn with_form(self, form: PluralForm) -> Self {
         Self {
             word: self.word,
@@ -27,16 +32,24 @@ impl<'w> Plural<'w> {
         }
     }
 
+    #[must_use]
+    /// Get the word that is being pluralized.
     pub const fn word(&self) -> &str {
         self.word
     }
 
+    #[must_use]
+    /// Determine the plural form of the word.
     pub const fn form(&self) -> &PluralForm {
         &self.form
     }
 }
 
+/// Trait providing methods for the pluralization of words.
+///
+/// This does not handle the implementation itself.
 pub trait Pluralize {
+    /// Get the plural form of the word.
     fn plural(&self) -> String;
 }
 

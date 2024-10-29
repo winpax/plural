@@ -2,6 +2,11 @@
 
 A simple library to pluralize words.
 
+> [!NOTE]
+> This library is intended for the English language.
+> It may work with other languages that follow the convention of adding an 's' to the end of words,
+> but for most languages a custom implementation will be required.
+
 ## Usage
 
 ```rust
